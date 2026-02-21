@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: loyalty_postgres
+    environment:
+      POSTGRES_DB: loyalty_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: securepassword
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    container_name: loyalty_redis
+    ports:
+      - "6379:6379"
